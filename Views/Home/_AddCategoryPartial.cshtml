@@ -1,0 +1,17 @@
+@model Category
+
+<div class="column-con">
+    <div>
+    <form asp-action="CreateCategory" asp-controller="Home" method="post">
+        <p>
+            <label asp-for="CategoryName"></label>
+            <span asp-validation-for="CategoryName"></span>
+            <input asp-for="CategoryName" type="text">
+        </p>
+        <div>
+            <button class ="btn btn-success mt-3">Create</button>
+        </div>
+    </form> 
+    </div>
+</div>
+<div class="column-con">

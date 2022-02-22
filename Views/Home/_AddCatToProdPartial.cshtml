@@ -1,0 +1,14 @@
+@model ProdCatMany
+
+<form asp-action="AddCatToProd" asp-controller="Home" method="POST">
+    <input type="hidden" asp-for="ProductId" value="@ViewBag.prodId"/>
+        <select asp-for="CategoryId"  class="form-control">
+        @foreach (Category other in @ViewBag.getCategories)
+        {
+            <option value="@other.CategoryId">@other.CategoryName</option>
+        }
+    </select>   
+    <div class="form-group">
+        <button class ="btn btn-success mt-3" type="submit">Add</button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+@model Product
+
+<div class="column-con">
+    <div>
+    <form asp-action="CreateProduct" asp-controller="Home" method="post">
+        <p>
+            <label asp-for="ProductName"></label>
+            <span asp-validation-for="ProductName"></span>
+            <input asp-for="ProductName" type="text">
+        </p>
+        <p>
+            <label asp-for="Description"></label>
+            <span asp-validation-for="Description"></span>
+            <input asp-for="Description" type="text">
+        </p>
+        <p>
+            <label asp-for="Price"></label>
+            <span asp-validation-for="Price"></span>
+            <input asp-for="Price" type="text">
+        </p>
+        <div>
+            <button class ="btn btn-success mt-3">Create</button>
+        </div>
+    </form> 
+    </div>
+</div>
+<div class="column-con">

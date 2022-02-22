@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Product
+
+<div class="text-center">
+    <h3 class="display-4">@Model.ProductName</h3>
+</div>
+
+<hr>
+
+<div class="column-con">
+    <div><h4>Categories</h4></div>
+    <div><h4>Add Category</h4></div>
+</div>
+
+
+<div class="column-con">
+    <div class="column">
+        <ul>
+            @foreach(ProdCatMany prodCatMany in Model.CategoryProducts)
+            {
+                <li>@prodCatMany.category.CategoryName</li>
+            }
+        </ul>
+    </div>
+
+    <div class="column">
+        <partial name="_AddCatToProdPartial" model='new ProdCatMany{}'>
+
+        </partial>
+    </div>
+</div>
+
+
